@@ -1,0 +1,1 @@
+define("src/api/qiniu",function(e,n){function t(e){return e&&e.__esModule?e:{"default":e}}function u(){return o.default.get("/qiniu-token")}Object.defineProperty(n,"__esModule",{value:!0}),n.getUploadToken=u;var i=e("src/utils/fetch"),o=t(i)});

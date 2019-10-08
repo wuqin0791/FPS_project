@@ -1,0 +1,1 @@
+define("config/base",function(t,e){Object.defineProperty(e,"__esModule",{value:!0});e.API_ROOT="",e.QINIU_CDN="http://p6164ajt2.bkt.clouddn.com/",e.DEFAULT_IMG="http://p6164ajt2.bkt.clouddn.com/FqmQygRqhCkdwzsTw6oRZzCxNvyH",e.STATUS_CODE_MAP={2e3:"成功",4001:"类型未知",4002:"参数错误",4003:"禁止访问",4004:"没找到资源",4005:"sourceExist"}});

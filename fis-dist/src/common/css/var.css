@@ -1,0 +1,12 @@
+/* variables */
+/* mixin */
+.dt,
+.dt-wrap {
+  display: table;
+}
+.dt-wrap .dtc,
+.dtc {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}

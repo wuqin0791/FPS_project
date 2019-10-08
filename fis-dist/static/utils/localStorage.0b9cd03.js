@@ -1,0 +1,1 @@
+define("src/utils/localStorage",function(e,o,r){var s=e("node_modules/store/src/store-engine"),t=[e("node_modules/store/storages/localStorage")],l=[e("node_modules/store/plugins/expire")];r.exports=s.createStore(t,l)});

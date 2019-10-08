@@ -1,0 +1,1 @@
+define("config",function(e,n,o){function r(e){if(e&&e.__esModule)return e;var n={};if(null!=e)for(var o in e)Object.prototype.hasOwnProperty.call(e,o)&&(n[o]=e[o]);return n.default=e,n}function t(e){return e&&e.__esModule?e:{"default":e}}var u=e("node_modules/babel-runtime/core-js/object/assign"),i=t(u),a=e("config/base"),f=r(a);o.exports=i.default(f,{API_ROOT:"/api-7din"})});

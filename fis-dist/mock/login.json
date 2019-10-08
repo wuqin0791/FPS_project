@@ -1,0 +1,10 @@
+
+{
+  "err_code": 0,
+  "message": "login seccessfully",
+  "data": {
+    "username": "用户名",
+    "wechat": "微信名字",
+    "state":1 
+  }
+}

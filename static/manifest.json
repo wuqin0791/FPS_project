@@ -1,0 +1,30 @@
+{
+    "start_url": "/wechat/7din/?utm_source=homescreen",
+    "name": "七丁",
+    "short_name": "七丁",
+    "icons": [
+        {
+            "src": "img/icons/android-chrome-512x512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        },
+        {
+            "src": "img/icons/android-chrome-192x192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "img/icons/apple-touch-icon-180x180.png",
+            "type": "image/png",
+            "sizes": "180x180"
+        },
+        {
+            "src": "img/icons/apple-touch-icon-152x152.png",
+            "type": "image/png",
+            "sizes": "152x152"
+        }
+    ],
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#278fef"
+}
