@@ -1,3 +1,8 @@
+<!--
+ * @Description: This is a python file
+ * @Author: JeanneWu
+ * @Date: 2018-03-29 15:59:10
+ -->
 # fis3-vue2-pwa-starter
 
 > fis3+vue2+pwa starter template
@@ -29,7 +34,7 @@ demo
 * /static/manifest.json 里面引用的图片不应添加hash。
 
 
-## npm 相关命令
+## npm 相关命令 111
 
 ``` bash
 # 安装工程依赖
