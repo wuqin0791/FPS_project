@@ -2,12 +2,14 @@
   "name": "7din",
   "version": "1.0.0",
   "scripts": {
+    "start": "fis3 server start",
     "dev": "fis3 release -wL",
     "test": "rm -rf ./fis-dist && fis3 release local && workbox generate:sw && cross-env NODE_ENV=test node deploy",
     "build": "rm -rf ./fis-dist && fis3 release local && workbox generate:sw && cross-env NODE_ENV=production node deploy"
   },
   "dependencies": {
     "axios": "^0.17.1",
+    "fis3": "^3.4.41",
     "image-promise": "^5.0.1",
     "json2csv": "^4.0.4",
     "loadjs": "^3.5.4",
