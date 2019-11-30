@@ -7,6 +7,8 @@
   </div>
 </template>
 
+
+
 <script>
 import Vue from "vue";
 import { Field, Button, Toast } from "mint-ui";
