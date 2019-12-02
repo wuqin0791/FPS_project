@@ -1,7 +1,7 @@
 <template>
   <div v-bind:style="{height:height + 'px'}" class="page-index">
     <div class="blur page-mask"></div>
-    <mt-field :state="nameStatus ? 'error' : ''" placeholder="请输入您的真实姓名" v-model="name"></mt-field>
+    <mt-field :state="nameStatus ? 'error' : ''" placeholder="请输入您的真实姓名123" v-model="name"></mt-field>
     <p class="mistake" v-show="nameStatus">请输入您的真实姓名</p>
     <mt-button type="primary" size="large" @click="submit">登录</mt-button>
   </div>
