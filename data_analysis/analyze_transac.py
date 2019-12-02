@@ -50,8 +50,16 @@ def amount_plot(data, edge):
 
 amount = df['amount'].values
 mean = np.mean(amount)
+mid = np.median(amount)
 over = [x for x in amount if x >= 10*mean]
-below = [x for x in amount if x <= mean]
+below = [x for x in amount if x <= 10*mean]
+over2 = [x for x in amount if x >= 10*mid]
+below2 = [x for x in amount if x <= 10*mid]
 sigma = np.sum([(x-mean)**2 for x in amount])/len(amount)
-print(mean, len(over), len(below), sigma)
+# 计算90%分位数，203近似于10*22=220（10倍的中位数）
+percent = np.percentile(amount, 90)
+print(percent)
+print('mean:', mean, 'median:', mid, (len(over), len(below)),
+      (len(over2), len(below2)))
+# 中位数对强噪点的交易型数据表现更好
 amount_plot(amount, 100)
