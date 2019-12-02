@@ -1,31 +1,27 @@
 <template>
-  <div class="page-transfer">
+  <div class="page-mainpage">
       <mt-header title="FPS">
          <router-link to="/" slot="left"><mt-button icon="BACK">BACK</mt-button></router-link>
          <mt-button icon="more" slot="right"></mt-button>
        </mt-header>
           <mt-field :state="nameStatus ? 'error' : ''" placeholder="My Balance" v-model="name"></mt-field>
           <mt-field :state="nameStatus ? 'error' : ''" placeholder="￥￥￥￥" v-model="name"></mt-field>
-          <mt-button @click="message" size="large">Bank of China</mt-button>
-          <mt-button @click="submit" size="large">HSBC</mt-button>
-          
+          <mt-button @click="submit" size="large">Transfer</mt-button>
+          <mt-button @click="submit" size="large">Bill Payment</mt-button>
+
+
   </div>
 </template>
 
 <script>
 import Vue from "vue";
 import { Field, Button, Toast } from "mint-ui";
-import { MessageBox } from 'mint-ui';
 import { Header } from 'mint-ui';
 import api from "@/api";
 
 Vue.component(Header.name, Header);
 Vue.component(Field.name, Field);
 Vue.component(Button.name, Button);
-
-
-
-//MessageBox.confirm(message, title);
 
 export default {
   data() {
@@ -41,18 +37,6 @@ export default {
   },
 
   methods: {
-      
-
-    message(){
-
-    MessageBox({
-     title: 'Notice',
-     message: '确定用此银行账户进行转账',
-     showCancelButton: true
-    });
-
-    }
-
     submit() {
       if (!this.name) return false;
 
@@ -73,5 +57,24 @@ export default {
 @import "../../../common/css/var.less";
 @import "../../../common/css/reset.less";
 
-
+.page-register {
+  .title {
+    font-weight: 300;
+    font-size: 24px;
+    padding: 20px 0px;
+    text-align: center;
+  }
+  .mint-cell:first-child,
+  .mint-cell-wrapper {
+    background-origin: border-box;
+  }
+  .mint-button {
+    border-radius: 50px;
+    margin-top: 40px;
+    width: 210px;
+    height: 48px;
+    background: rgb(226, 101, 86);
+   
+  }
+}
 </style>

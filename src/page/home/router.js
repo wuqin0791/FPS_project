@@ -22,6 +22,14 @@ const routes = [
         path: '/transfer',
         component: resolve => require.async('components/transfer.vue', resolve)
     },{
+        name: 'test',
+        path: '/test',
+        component: resolve => require.async('components/test.vue', resolve)
+    },{
+        name: 'mainpage',
+        path: '/mainpage',
+        component: resolve => require.async('components/mainpage.vue', resolve)
+    },{
         path: '*',
         redirect: '/'
     }

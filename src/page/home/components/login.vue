@@ -1,9 +1,12 @@
 <template>
   <div v-bind:style="{height:height + 'px'}" class="page-index">
     <div class="blur page-mask"></div>
-    <mt-field :state="nameStatus ? 'error' : ''" placeholder="请输入您的真实姓名123" v-model="name"></mt-field>
-    <p class="mistake" v-show="nameStatus">请输入您的真实姓名</p>
-    <mt-button type="primary" size="large" @click="submit">登录</mt-button>
+    <mt-field :state="nameStatus ? 'error' : ''" placeholder="Account" v-model="name"></mt-field>
+    <mt-field :state="nameStatus ? 'error' : ''" placeholder="Password" v-model="name"></mt-field>
+    <p class="mistake" v-show="nameStatus">Mistake in Account name or Password</p>
+    <mt-button type="primary" size="large" @click="submit">LOG IN</mt-button>
+    <mt-button type="primary" size="normal" @click="submit">REGISTER</mt-button>
+    <mt-button type="primary" size="normal" @click="submit">FORGET PASSWORD</mt-button>
   </div>
 </template>
 
@@ -117,6 +120,7 @@ export default {
     width: 210px;
     margin-top: -30px;
   }
+
   .mint-button {
     margin-top: 40px;
     width: 210px;
