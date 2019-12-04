@@ -1,34 +1,23 @@
 <template>
-  <div v-bind:style="{height:height + 'px'}" class="page-index">
+  <div v-bind:style="{height:height + 'px'}" class="page-notice2">
     <div class="blur page-mask"></div>
-    <img class="logo" src=http://chuantu.xyz/t6/703/1575364368x977013264.png />
-    <div>
-      <mt-field :state="nameStatus ? 'error' : ''" placeholder="Account" v-model="name"></mt-field>
-    </div>
-    <div style="margin-top: 50px;">
-      <mt-field
-        type="password"
-        :state="passwordStatus ? 'error' : ''"
-        placeholder="Password"
-        v-model="password"
-      ></mt-field>
-    </div>
-
-    <p class="mistake" v-show="nameStatus">Mistake in Account name or Password</p>
-    <mt-button style="margin-top: 60px;" type="primary" size="large" @click="submit">LOG IN</mt-button>
-    <mt-button type="primary" size="normal" @click="register">REGISTER</mt-button>
-    <!-- <mt-button type="primary" size="normal" @click="submit">FORGET PASSWORD</mt-button> -->
+    <mt-header title="TRANSFER">
+           <router-link to="/" slot="left"><mt-button icon="BACK">BACK</mt-button></router-link>
+           <mt-button icon="more" slot="right"></mt-button>
+    </mt-header>
+    <mt-button type="primary" size="normal" @click="submit">Account Name</mt-button>
+    <mt-field label="Amount" placeholder="$" v-model="account"></mt-field>
+    <mt-button type="primary" size="normal" @click="submit">CONFIRM</mt-button>
   </div>
 </template>
 
 <script>
 import Vue from "vue";
 import { mapGetters, mapActions } from "vuex";
-import { Field, Button, Toast } from "mint-ui";
+import { Header, Field, Button, Toast } from "mint-ui";
 import api from "@/api";
-import fetch from "@/utils/fetch.js";
-import store from "@/store/home";
 
+Vue.component(Header.name, Header);
 Vue.component(Field.name, Field);
 Vue.component(Button.name, Button);
 Vue.component(Toast.name, Toast);
@@ -38,46 +27,51 @@ export default {
     return {
       labelPosition: "left",
       name: "",
-      password: "",
+      wechat: "",
       nameStatus: "",
       height: "",
       uploader: ""
     };
   },
   created() {},
-  computed: {
-    ...mapGetters(["upToken"])
-  },
   methods: {
     ...mapActions(["LOGIN"]),
     submit() {
-      this.nameStatus = this.name ? false : true;
-      this.passwordStatus = this.password ? false : true;
+      // alert(11);
+      // this.nameStatus = this.name ? false : true;
+      // // this.wechatStatus = this.wechat ? false : true;
+      // let totalStatus = this.nameStatus;
+      console.log(this.$router)
+      this.$router.push({ path: "/" });
       // 下面是提交的请求
-      this.LOGIN({
-        tel: this.name,
-        password: this.password
-      }).then(res => {
-        console.log(res);
-        localStorage.setItem('token', res.token);
-        this.$router.push({ path: "/" });
-      });
-    },
-    register() {
-      this.$router.push({ path: "/register" });
+      // this.LOGIN({ 
+      //   name: this.name,
+      //   nick_name: this.wechat
+      // })
+      //   .then(res => {
+      //     console.log(res);
+      //     let code = +res.data.code;
+      //     if (!totalStatus && code === 2000) {
+      //       // if (true) {
+      //       let userInfo = res.data.data;
+      //       this.$router.push({ path: "/index" });
+      //     } else {
+      //       Toast(res.data.msg);
+      //     }
+      //   })
+      //   .catch(res => {});
     }
   },
   watch: {
     name: function(val) {
       (this.nameStatus = false) || val || (this.nameStatus = true);
-    },
-    password: function(val) {
-      (this.wechatStatus = false) || val || (this.wechatStatus = true);
     }
+    // wechat: function(val) {
+    //   (this.wechatStatus = false) || val || (this.wechatStatus = true);
+    // }
   },
   async mounted() {
     this.height = window.innerHeight;
-    // await this.FETCH_UPLOAD_TOKEN();
   }
 };
 </script>
@@ -121,9 +115,7 @@ export default {
   }
   .logo {
     position: absolute;
-    top: 33px;
-    left: 30px;
-    width: 80px;
+    top: 10px;
   }
   .mint-field {
     border-radius: 50px;
@@ -132,7 +124,7 @@ export default {
   }
 
   .mint-button {
-    margin-top: 21px;
+    margin-top: 40px;
     width: 210px;
     height: 48px;
     background: rgb(226, 101, 86);
@@ -142,9 +134,6 @@ export default {
     text-align: left;
     width: 205px;
     color: white;
-  }
-  input:-internal-autofill-selected {
-    background-color: white !important;
   }
 }
 </style>

@@ -1,16 +1,24 @@
+<!--
+ * @Description: This is a python file
+ * @Author: JeanneWu
+ * @Date: 2018-03-29 15:59:10
+ -->
 <template>
   <div class="page-register">
-      <div class="title">注册</div>
-          <mt-field label="姓名" placeholder="请输入姓名" v-model="name"></mt-field>
-          <mt-field label="手机号" placeholder="请输入手机号" type="tel" v-model="phone"></mt-field>
-          <mt-button @click="submit" size="large">提交</mt-button>
+    <div class="title">注册</div>
+    <mt-field label="name" placeholder="请输入name" v-model="name"></mt-field>
+    <mt-field label="tel" placeholder="请输入tel" type="tel" v-model="phone"></mt-field>
+    <mt-field label="email" placeholder="请输入email" type="email" v-model="email"></mt-field>
+    <mt-field label="password" placeholder="请输入password" type="password" v-model="password"></mt-field>
+    <mt-button @click="submit" size="large">提交</mt-button>
   </div>
 </template>
 
 <script>
 import Vue from "vue";
-import { Field, Button, Toast } from "mint-ui";
+import { Field, Button, Toast, MessageBox } from "mint-ui";
 import api from "@/api";
+import fetch from "@/utils/fetch.js";
 
 Vue.component(Field.name, Field);
 Vue.component(Button.name, Button);
@@ -20,22 +28,29 @@ export default {
     return {
       name: "",
       nick_name: "",
-      phone: ""
+      phone: "",
+      email: "",
+      password: ""
     };
   },
   methods: {
     submit() {
-      if (!this.name) return false;
-
-      api.account
-        .doRegister({
-          name: this.name,
-          nick_name: this.nick_name,
-          phone: this.phone
-        })
-        .then(res => {
-          Toast(res.data.msg);
+      fetch({
+        url: "http://127.0.0.1:3000/user/register",
+        method: "post",
+        data: {
+          password: this.password,
+          tel: this.phone,
+          email: this.email
+        }
+      }).then(res => {
+        console.log(res);
+        MessageBox.alert("Success!").then(action => {
+          this.$router.push({ path: "/login" });
         });
+      });
+      // if (!this.name) return false;
+     
     }
   }
 };

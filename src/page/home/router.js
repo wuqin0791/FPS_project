@@ -1,3 +1,8 @@
+/*
+ * @Description: This is a js file
+ * @Author: JeanneWu
+ * @Date: 2019-12-02 22:07:52
+ */
 import Vue from 'vue';
 import Router from 'vue-router';
 
@@ -10,17 +15,17 @@ const routes = [
         path: '/login',
         component: resolve => require.async('components/login.vue', resolve)
     }, {
-        name: 'seller',
-        path: '/',
-        component: resolve => require.async('components/index.vue', resolve)
+        name: 'transfer',
+        path: '/transfer',
+        component: resolve => require.async('components/transfer.vue', resolve)
     }, {
         name: 'register',
         path: '/register',
         component: resolve => require.async('components/register.vue', resolve)
-    }, {
-        name: 'transfer',
-        path: '/transfer',
-        component: resolve => require.async('components/transfer.vue', resolve)
+    },{
+        name: 'account',
+        path: '/',
+        component: resolve => require.async('components/account.vue', resolve)
     },{
         name: 'test',
         path: '/test',
@@ -30,8 +35,17 @@ const routes = [
         path: '/mainpage',
         component: resolve => require.async('components/mainpage.vue', resolve)
     },{
-        path: '*',
-        redirect: '/'
+        name: 'amount',
+        path: '/amount',
+        component: resolve => require.async('components/amount.vue', resolve)
+    },{
+        name: 'notice1',
+        path: '/notice1',
+        component: resolve => require.async('components/notice1.vue', resolve)
+    },{
+        name: 'notice2',
+        path: '/notice2',
+        component: resolve => require.async('components/notice2.vue', resolve)
     }
 ];
 

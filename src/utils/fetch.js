@@ -1,3 +1,8 @@
+/*
+ * @Description: This is a javascript file
+ * @Author: JeanneWu
+ * @Date: 2018-04-18 14:53:04
+ */
 import axios from 'axios';
 import cookie from './cookie';
 import { API_ROOT, STATUS_CODE_MAP } from 'config';
@@ -24,14 +29,12 @@ const service = axios.create({
 // respone拦截器
 service.interceptors.response.use(
     async (res) => {
-		let code = +res.data.code;
-		// if (code === 2000) {
-		// 	return res || '';
-		// } else {
-		// 	alert(data.msg || '服务器忙');
-		// 	// console.error('response data:', data);
-		// 	//return Promise.reject(data)
-		// }
+		let code = +res.data.errcode;
+		if (code === 0) {
+			return res.data.data || '';
+		} else {
+			alert(data.msg || '服务器忙');
+		}
 		if (code === 401) {
             location.reload();
             return Promise.reject(res);

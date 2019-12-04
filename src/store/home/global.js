@@ -6,6 +6,7 @@
 import cookie from '@/utils/cookie';
 import store from '@/store/home';
 import api from '@/api';
+import fetch from "@/utils/fetch.js";
 
 export const state = {
     isLoading: false,
@@ -15,7 +16,8 @@ export const state = {
     storeList: [],
     productList: [],
     curStoreId: '',
-    curProduct: ''
+    curProduct: '',
+    userList: ''
 };
 
 export const getters = {
@@ -25,16 +27,21 @@ export const getters = {
     storeList: state => state.storeList,
     productList: state => state.productList,
     curStoreId: state => state.curStoreId,
-    curProduct: state => state.curProduct
+    curProduct: state => state.curProduct,
+    userList: state => state.userList
 };
 
 export const actions = {
     LOGIN({ commit }, data) {
-        return api.account.doLogin(data).then(res => {
-            commit('SET_USER_INFO', res.data.data);
+         return fetch({
+            url: "http://127.0.0.1:3000/user/login",
+            method: "post",
+            data
+          }).then(res => {
+            console.log(res);
+            commit("SET_UPTOKEN", res.token);
             return res;
-            // cookie.set('SESS', window.btoa(res.token));
-        });
+          });
     },
     LOGOUT({ commit }) {
         return api.account.doLogout().then(() => {
@@ -44,10 +51,41 @@ export const actions = {
             // window.location.reload(true);
         })
     },
-    FETCH_UPLOAD_TOKEN({ commit }) {
-        return api.qiniu.getUploadToken().then(res => {
-            commit('SET_UPTOKEN', res.data.token);
-        });
+    FETCH_USER_INFO({commit} , data){
+        console.log(data.token, "global upTaken");
+        return fetch({
+            url: "http://127.0.0.1:3000/user/info",
+            headers: {
+                token:data.token
+            }
+          }).then(res => {
+            console.log(res);
+            commit("SET_USER_INFO", res);
+            return res;
+          });
+    },
+    FETCH_ALL_USER_INFO({commit}, data){
+        console.log(data);
+        return fetch({
+            url: "http://127.0.0.1:3000/user/all",
+            method: "get",
+            headers: {
+                token:data
+            }
+          }).then(res => {
+            console.log(res);
+            commit("SET_USER_LIST", res);
+            return res;
+          });
+    },
+    FETCH_UPLOAD_TOKEN({ commit, data }) {
+        // fetch({
+        //     url: "http://127.0.0.1:3000/user/login",
+        //     method: "post",
+        //     data
+        //   }).then(res => {
+        //         return commit('SET_UPTOKEN', res.token); ;
+        //   });
     },
     FETCH_STORE_LIST({ commit }) {
         return api.store.getStores().then(res => {
@@ -101,10 +139,14 @@ export const mutations = {
         state.userinfo = payload;
     },
     SET_UPTOKEN: (state, payload) => {
+        console.log(payload,'upToken == ');
         state.upToken = payload;
     },
     SET_STORE_LIST: (state, payload) => {
         state.storeList = payload;
+    },
+    SET_USER_LIST: (state, payload) => {
+        state.userList = payload;
     },
     SET_PRODUCT_LIST: (state, payload) => {
         state.productList = payload;

@@ -1,3 +1,4 @@
+
 /**
  * @file api.account
  * @author JeanneWu
@@ -11,8 +12,10 @@ import fetch from '@/utils/fetch.js';
  * @return {Promise}
  */
 
-export function getAuth() {
-    return fetch.get('/auth');
+export function getUserInfo() {
+    return fetch.get({
+        url: 'http://127.0.0.1:3000/user/info'
+    });
 }
 
 /**

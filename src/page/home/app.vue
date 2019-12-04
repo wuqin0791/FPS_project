@@ -34,26 +34,16 @@ export default {
     return {
       navs: [
         {
-          label: "seller",
+          label: "account",
           name: "转账"
         },
         {
-          label: "user",
+          label: "transfer",
           name: "我的"
-        },
-        {
-          label: "checkList",
-          name: "今日订单",
-          adminRequired: true
-        },
-        {
-          label: "register",
-          name: "注册",
-          adminRequired: true
         }
       ],
-      hidePage: ["course", "detail", "sellerAdd", "courseAdd"],
-      selected: this.$route.name || "seller"
+      hidePage: ["account"],
+      selected: this.$route.name || "account"
     };
   },
   computed: {
@@ -65,7 +55,7 @@ export default {
   watch: {
     $route(to, from) {
       if (this.hidePage.indexOf(to.name) >= 0) {
-        this.selected = "seller";
+        this.selected = "account";
       } else {
         this.selected = to.name;
       }
@@ -96,7 +86,7 @@ export default {
     }
   }
   .mint-tab-item {
-    padding: 20px 0;
+    padding: 15px 0;
   }
   .mint-tab-item-label {
       font-size: 16px;
@@ -112,6 +102,10 @@ export default {
   }
   .red {
     color: @pink;
+  }
+  .mint-header{
+    background-color:rgba(39, 38, 38, 0.9)!important;
+    height: 50px!important;
   }
 }
 </style>

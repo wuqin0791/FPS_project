@@ -2,7 +2,7 @@
   "name": "7din",
   "version": "1.0.0",
   "scripts": {
-    "start": "fis3 server start -p 8090",
+    "start": "fis3 server start -p 8080",
     "dev": "fis3 release -wL",
     "test": "rm -rf ./fis-dist && fis3 release local && workbox generate:sw && cross-env NODE_ENV=test node deploy",
     "build": "rm -rf ./fis-dist && fis3 release local && workbox generate:sw && cross-env NODE_ENV=production node deploy"
