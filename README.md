@@ -34,7 +34,7 @@ demo
 * /static/manifest.json 里面引用的图片不应添加hash。
 
 
-## npm 相关命令 111
+## npm 相关命令
 
 ``` bash
 # 安装工程依赖
