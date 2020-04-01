@@ -1,5 +1,5 @@
 <!--
- * @Description: This is a python file
+ * @Description: This is a vue file
  * @Author: JeanneWu
  * @Date: 2019-12-02 22:07:52
  -->
@@ -53,9 +53,6 @@ export default {
     });
     
   },
-  // computed: {
-  //   ...mapGetters(["SET_UPTOKEN"])
-  // },
   methods: {
    ...mapActions(["FETCH_USER_INFO"]),
     message() {

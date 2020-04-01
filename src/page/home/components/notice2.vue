@@ -37,38 +37,15 @@ export default {
   methods: {
     ...mapActions(["LOGIN"]),
     submit() {
-      // alert(11);
-      // this.nameStatus = this.name ? false : true;
-      // // this.wechatStatus = this.wechat ? false : true;
-      // let totalStatus = this.nameStatus;
       console.log(this.$router)
       this.$router.push({ path: "/" });
-      // 下面是提交的请求
-      // this.LOGIN({ 
-      //   name: this.name,
-      //   nick_name: this.wechat
-      // })
-      //   .then(res => {
-      //     console.log(res);
-      //     let code = +res.data.code;
-      //     if (!totalStatus && code === 2000) {
-      //       // if (true) {
-      //       let userInfo = res.data.data;
-      //       this.$router.push({ path: "/index" });
-      //     } else {
-      //       Toast(res.data.msg);
-      //     }
-      //   })
-      //   .catch(res => {});
+
     }
   },
   watch: {
     name: function(val) {
       (this.nameStatus = false) || val || (this.nameStatus = true);
     }
-    // wechat: function(val) {
-    //   (this.wechatStatus = false) || val || (this.wechatStatus = true);
-    // }
   },
   async mounted() {
     this.height = window.innerHeight;

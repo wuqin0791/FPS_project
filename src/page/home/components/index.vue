@@ -3,20 +3,7 @@
     <transition-group name="list">
         <router-link :key="1" :to="{path: 'course'}" tag="div">
             <section>
-                <!-- <div class="top-container">
-                    <div class="top">
-                        <img class="seller-img"  alt="">
-                        <div class="desc">
-                            <div class="seller-name"></div>
-                            <div class="seller-desc">描述：</div>
-                            <div class="seller-tel">电话：</div>
-                        </div>
-                    </div>
-                </div> -->
-                <!-- <div class="bottom">
-                    
-                    <button>订餐</button>
-                </div> -->
+              
             </section>
         </router-link>
     </transition-group>
@@ -25,9 +12,6 @@
 
 <script>
 import { Button } from "mint-ui";
-
-// import 'vue-awesome/icons'
-
 import Vue from "vue";
 import api from "@/api";
 import * as config from "config";
@@ -38,11 +22,11 @@ Vue.component(Button.name, Button);
 export default {
   data() {
     return {
-      // isAdmin: this.$root.roleType == 2
+
     };
   },
   methods: {
-    // ...mapActions(["FETCH_STORE_LIST", "DE_STORE"])
+
   },
 };
 </script>

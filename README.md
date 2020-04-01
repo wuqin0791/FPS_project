@@ -1,5 +1,5 @@
 <!--
- * @Description: This is a python file
+ * @Description: This is a markdown file
  * @Author: JeanneWu
  * @Date: 2018-03-29 15:59:10
  -->
@@ -10,23 +10,49 @@
 ## 目录结构
 
 ``` bash
-demo
-├── config/                 不同环境下的全局配置
-├── dep/                    三方依赖资源（非NPM安装）
-├── mock/                   mock配置
-├── node_modules/
-└── src/
-    ├── components/         基础公用组件
-    ├── common/             其他通用资源（样式变量/模板）
-    ├── lib/                零散的业务使用三方库（非模块化）
-    ├── page/               页面vue组件
-    └── store/              vuex
-├── static/                 静态资源
-├── utils/                  辅助工具
-├── deploy.js               远程部署配置
-├── workbox-cli-config.js   workbox-build配置
-├── .editorconfig, .gitignore
-└── LINCENSE, package.json, README.md
+project
+├── README.md
+├── config                      不同环境下的全局配置
+│   ├── base.js
+│   ├── development.js
+│   ├── production.js
+│   └── test.js
+├── data_analysis               数据分析模块
+│   ├── Dist_edge100.png
+│   ├── Dist_edge50.png
+│   ├── analyze_transac.py
+│   └── raw_view.png
+├── dep                         三方依赖资源（非NPM安装）
+│   └── mod.js
+├── deploy.js
+├── favicon.ico
+├── fis-conf.js
+├── fis-dist                    编译后的文件
+├── mock                        mock配置
+│   ├── login.json
+│   └── server.conf
+├── package-lock.json
+├── package.json
+├── server                      nodejs-express服务
+│   ├── README.md
+│   ├── node
+│   ├── package.json
+│   └── web
+├── src                         
+│   ├── api
+│   ├── common
+│   ├── components              基础公用组件
+│   ├── lib
+│   ├── page                    页面vue组件
+│   ├── store                   vuex状态管理
+│   └── utils
+├── static                      静态资源
+│   ├── img
+│   ├── manifest.json
+│   ├── sw-fallback.js
+│   └── sw.js
+├── workbox-cli-config.js       workbox-build配置
+├── yarn.lock
 ```
 
 * /static/sw-fallback.js 降级标志文件路径，插件将在入口文件以 &lt;script&gt; 形式插入，默认标志名为window.SW_FALLBACK，若该值为 true，则 sw-register.js 不会引入执行，注册的 service worker 会被unregister

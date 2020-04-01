@@ -17,7 +17,6 @@
     <p class="mistake" v-show="nameStatus">Mistake in Account name or Password</p>
     <mt-button style="margin-top: 60px;" type="primary" size="large" @click="submit">LOG IN</mt-button>
     <mt-button type="primary" size="normal" @click="register">REGISTER</mt-button>
-    <!-- <mt-button type="primary" size="normal" @click="submit">FORGET PASSWORD</mt-button> -->
   </div>
 </template>
 
@@ -77,7 +76,6 @@ export default {
   },
   async mounted() {
     this.height = window.innerHeight;
-    // await this.FETCH_UPLOAD_TOKEN();
   }
 };
 </script>

@@ -33,10 +33,7 @@ Vue.component(Header.name, Header);
 Vue.component(Field.name, Field);
 Vue.component(Button.name, Button);
 Vue.component(Search.name, Search);
-// <mt-search v-model="value">
-//       <div>{{userList}}</div>
-//       <mt-cell v-for="item in userList" :title="item.tel" :value="item.id"></mt-cell>
-//     </mt-search>  v-on:click.native="nextStep"
+
 export default {
   data() {
     return {
@@ -75,14 +72,6 @@ export default {
   async mounted() {
     this.height = window.innerHeight;
   }
-  // async asyncData({ store, route }) {
-  //   console.log(localStorage.getItem("token"));
-  //   this.userList = await store.dispatch(
-  //     "FETCH_ALL_USER_INFO",
-  //     localStorage.getItem("token")
-  //   );
-  //   console.log(this.userList);
-  // }
 };
 </script>
 

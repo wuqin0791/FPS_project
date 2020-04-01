@@ -1,0 +1,65 @@
+<!--
+ * @Description: This is a javascript file
+ * @Author: JeanneWu
+ * @Date: 2019-12-14 10:31:23
+ -->
+<!DOCTYPE html>
+<html>
+
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>区块链存储demo</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <!--使用Bootstrap的js插件，必须先调入jQuery-->
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+
+    <!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        body {
+            background: rgb(0, 0, 0);
+            color: white;
+            padding: 15px 0px;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 16px;
+            ;
+        }
+        button{
+            /* background-color: rgb(44, 5, 7); */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="title">請提交要存儲的信息</div>
+        <form>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Sender Account Select</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect2">Receiver Account Select</label>
+                <select class="form-control" id="exampleFormControlSelect2">
+
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Message</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="please input message..."
+                    rows="3"></textarea>
+            </div>
+            <button id="submit" type="button" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <script src="./js/data.js?v=0.4"></script>
+</body>
+
+</html>

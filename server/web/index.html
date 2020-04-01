@@ -1,0 +1,57 @@
+<!--
+ * @Description: This is a javascript file
+ * @Author: JeanneWu
+ * @Date: 2019-12-14 10:31:23
+ -->
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>区块链存储demo</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <!--使用Bootstrap的js插件，必须先调入jQuery-->
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+
+    <!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        body {
+            background-color:#000;
+        }
+        .title{
+            font-weight: 1500;
+            color: white;
+            font-size: 20px;
+            position: relative;
+            text-align: center;
+            margin-top: 100px;
+        }
+        .click{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            background: rgba(255,255,255,0.8);
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<canvas id=c></canvas>
+<div class="click">Please Click..</div>
+<div class="container" id="container">
+    <div class="title">Welcome to Blockchain...</div>
+</div>
+
+<script src="./js/init.js?v=0.4"></script>
+<script src="./js/data.js?v=0.4"></script>
+</body>
+</html>

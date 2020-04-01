@@ -49,7 +49,6 @@ export default {
           this.$router.push({ path: "/login" });
         });
       });
-      // if (!this.name) return false;
      
     }
   }
