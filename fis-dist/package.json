@@ -7,7 +7,7 @@
     "build": "rm -rf ./fis-dist && fis3 release local && workbox generate:sw && cross-env NODE_ENV=production node deploy"
   },
   "dependencies": {
-    "axios": "^0.17.1",
+    "axios": "^0.18.1",
     "image-promise": "^5.0.1",
     "json2csv": "^4.0.4",
     "loadjs": "^3.5.4",
